@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Calque — Offline Office translator for macOS</title>
+  <meta name="description" content="Translate Word, Excel and PowerPoint documents into 36 languages, 100% on your Mac. Formatting preserved.">
+  <link rel="icon" type="image/png" href="icon.png">
+  <style>
+    :root{
+      --bg:#0c0c14;--fg:#f5f5f7;--muted:#a0a0b0;--card:#171727;
+      --accent:#7c69f5;--accent2:#4a80f0;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,system-ui,sans-serif;line-height:1.55}
+    a{color:#9aa9ff;text-decoration:none}
+    a:hover{text-decoration:underline}
+    header{padding:56px 24px 32px;text-align:center}
+    .hero-icon{width:144px;height:144px;border-radius:32px;display:block;margin:0 auto 28px;
+      background:linear-gradient(180deg,#4a80f0 0%,#604cdc 50%,#8038c8 100%);
+      box-shadow:0 12px 40px rgba(124,105,245,0.35),0 2px 8px rgba(0,0,0,0.3);
+      position:relative;overflow:hidden}
+    .hero-icon img{width:100%;height:100%;display:block}
+    h1{font-size:54px;line-height:1.05;margin:0 0 14px;letter-spacing:-0.02em;font-weight:700}
+    .tagline{font-size:20px;color:var(--muted);max-width:580px;margin:0 auto;line-height:1.45}
+    .cta{margin:32px 0 12px}
+    .btn{display:inline-block;padding:13px 28px;border-radius:12px;font-weight:600;
+      background:linear-gradient(180deg,#7c69f5,#604cdc);color:#fff;font-size:16px;
+      box-shadow:0 4px 14px rgba(124,105,245,0.4)}
+    .btn:hover{text-decoration:none;transform:translateY(-1px)}
+    .sub{color:var(--muted);font-size:14px;margin-top:8px}
+    main{max-width:960px;margin:0 auto;padding:24px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:48px 0}
+    .feature{padding:24px;border-radius:18px;background:var(--card);
+      border:1px solid rgba(255,255,255,0.06)}
+    .feature h3{margin:0 0 8px;font-size:17px}
+    .feature p{margin:0;color:var(--muted);font-size:14.5px}
+    .feature .em{font-size:24px;margin-bottom:10px}
+    section{margin:56px 0}
+    h2{font-size:32px;letter-spacing:-0.01em;margin:0 0 20px}
+    .langs{display:flex;flex-wrap:wrap;gap:6px;margin:20px 0}
+    .lang{padding:4px 10px;border-radius:999px;background:var(--card);font-size:13px;color:var(--muted);border:1px solid rgba(255,255,255,0.06)}
+    footer{border-top:1px solid rgba(255,255,255,0.06);padding:32px 24px;text-align:center;color:var(--muted);font-size:13px;margin-top:64px}
+    footer a{margin:0 12px}
+    @media (max-width:640px){h1{font-size:38px}.tagline{font-size:17px}h2{font-size:26px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="hero-icon"><img src="icon.png" alt="Calque"></div>
+    <h1>Calque</h1>
+    <p class="tagline">Translate Microsoft Office documents into 36 languages, entirely on your Mac. Nothing leaves the device.</p>
+    <div class="cta">
+      <a class="btn" href="#" id="mas-link">Download on the Mac App Store →</a>
+      <div class="sub">macOS 13.0 or later · Apple Silicon &amp; Intel</div>
+    </div>
+  </header>
+
+  <main>
+    <div class="grid">
+      <div class="feature"><div class="em">🔒</div><h3>100% on-device</h3><p>No cloud, no telemetry, no account. Your documents never leave your Mac.</p></div>
+      <div class="feature"><div class="em">📐</div><h3>Formatting preserved</h3><p>Bold, italic, hyperlinks, tables, images, fonts — every byte stays in place.</p></div>
+      <div class="feature"><div class="em">⚡</div><h3>Metal-accelerated</h3><p>Runs on Apple Silicon GPU via the Hy-MT1.5 translation model.</p></div>
+      <div class="feature"><div class="em">📂</div><h3>.docx · .xlsx · .pptx</h3><p>Drag-and-drop a Word, Excel or PowerPoint file. Get a translated copy.</p></div>
+      <div class="feature"><div class="em">🌐</div><h3>36 languages</h3><p>1,056 translation directions. Auto-detects the source language.</p></div>
+      <div class="feature"><div class="em">🛡️</div><h3>Sandboxed</h3><p>Mac App Store sandbox; only reads files you choose.</p></div>
+    </div>
+
+    <section>
+      <h2>Supported languages</h2>
+      <div class="langs">
+        <span class="lang">English</span><span class="lang">中文</span><span class="lang">繁體中文</span>
+        <span class="lang">粵語</span><span class="lang">Español</span><span class="lang">Français</span>
+        <span class="lang">Deutsch</span><span class="lang">日本語</span><span class="lang">한국어</span>
+        <span class="lang">Русский</span><span class="lang">العربية</span><span class="lang">Português</span>
+        <span class="lang">Türkçe</span><span class="lang">ไทย</span><span class="lang">Tiếng Việt</span>
+        <span class="lang">Bahasa Indonesia</span><span class="lang">Bahasa Melayu</span>
+        <span class="lang">Italiano</span><span class="lang">Nederlands</span><span class="lang">Polski</span>
+        <span class="lang">Українська</span><span class="lang">Čeština</span><span class="lang">Română</span>
+        <span class="lang">Magyar</span><span class="lang">Svenska</span><span class="lang">Dansk</span>
+        <span class="lang">Norsk</span><span class="lang">Suomi</span><span class="lang">Ελληνικά</span>
+        <span class="lang">עברית</span><span class="lang">हिन्दी</span><span class="lang">বাংলা</span>
+        <span class="lang">فارسی</span><span class="lang">اردو</span><span class="lang">தமிழ்</span>
+        <span class="lang">తెలుగు</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>How it works</h2>
+      <ol style="color:var(--muted);font-size:15.5px;line-height:1.7;padding-left:20px">
+        <li>Drop a <code>.docx</code> / <code>.xlsx</code> / <code>.pptx</code> file into Calque.</li>
+        <li>Pick a target language (or let auto-detect handle the source).</li>
+        <li>Calque parses the document, extracts text run-by-run, sends each paragraph through the on-device Hy-MT1.5 translation model with format-preservation tags.</li>
+        <li>Translated runs are written back into the original positions, preserving every byte of formatting.</li>
+        <li>A translated copy appears next to the original: <code>Report.ru.docx</code>.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="support.html">Support</a>
+    <a href="https://github.com/dkleptsov/calque">GitHub</a>
+    <div style="margin-top:14px">© 2026 Calque</div>
+  </footer>
+</body>
+</html>
