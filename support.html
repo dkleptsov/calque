@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Bobr Translate — Support</title>
+  <link rel="icon" type="image/png" href="icon.png">
+  <style>
+    body{margin:0;background:#0c0c14;color:#f5f5f7;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,system-ui,sans-serif;line-height:1.65}
+    a{color:#9aa9ff}
+    main{max-width:760px;margin:0 auto;padding:64px 24px}
+    h1{font-size:42px;letter-spacing:-0.02em;margin:0 0 8px}
+    .sub{color:#a0a0b0;margin-bottom:40px}
+    h2{font-size:22px;margin:36px 0 12px;letter-spacing:-0.01em}
+    p,li{color:#d8d8e0;font-size:16px}
+    code{background:#1d1d2e;padding:2px 6px;border-radius:6px;font-size:13.5px}
+    .nav{margin-bottom:32px}.nav a{margin-right:16px;font-size:14px;color:#a0a0b0}
+    .card{background:#171727;border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:20px 24px;margin:16px 0}
+    .q{font-weight:600;font-size:17px;margin-bottom:6px}
+    .a{color:#d8d8e0;font-size:15.5px}
+    footer{margin-top:80px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.08);color:#a0a0b0;font-size:13px}
+  </style>
+</head>
+<body>
+<main>
+  <div class="nav"><a href="index.html">← Back to Bobr Translate</a></div>
+  <h1>Support</h1>
+  <div class="sub">We answer every email within 2 business days.</div>
+
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:bobrtranslate@gmail.com">bobrtranslate@gmail.com</a></p>
+  <p>Issue tracker (preferred for bugs): <a href="https://github.com/dkleptsov/calque/issues">github.com/dkleptsov/calque/issues</a></p>
+
+  <h2>Frequently asked questions</h2>
+
+  <div class="card">
+    <div class="q">Where does the translation actually happen?</div>
+    <div class="a">Entirely on your Mac, using the on-device translation model that you downloaded on first launch. Bobr Translate does not send your documents anywhere.</div>
+  </div>
+
+  <div class="card">
+    <div class="q">Why is the first launch so big (~1.1 GB)?</div>
+    <div class="a">That's the offline translation model. The default Small model balances quality and download size. After the first download you never need internet again to translate.</div>
+  </div>
+
+  <div class="card">
+    <div class="q">Can I move the model file to an external drive?</div>
+    <div class="a">Not directly — the macOS sandbox keeps the model inside the app's container. Workaround: go to <strong>Settings → Model size</strong> and switch to a different size (Small / Medium / Large), or delete the existing file from <code>~/Library/Containers/com.doclingua.app/Data/Library/Application Support/com.doclingua.app/models/</code> and re-download.</div>
+  </div>
+
+  <div class="card">
+    <div class="q">Translation seems slow on my Intel Mac</div>
+    <div class="a">Bobr Translate uses Metal acceleration where it's available. On Apple Silicon, expect ~20-50 paragraphs/sec; on older Intel Macs it falls back to CPU and is 5-10× slower. For Intel Macs we recommend the Small model (default) — the larger sizes are slower on CPU.</div>
+  </div>
+
+  <div class="card">
+    <div class="q">Some inline formatting (a bold word in the middle of a sentence) shifted</div>
+    <div class="a">Bobr Translate uses the model's "formatted translation" prompt which keeps <code>&lt;sN&gt;</code> tags around each formatted run. In rare cases the model drops a tag — we fall back to proportional splitting based on character ratios, which can shift the formatting by a word or two. If you see this consistently, please attach the source file to a bug report so we can improve heuristics.</div>
+  </div>
+
+  <div class="card">
+    <div class="q">My language is not in the list</div>
+    <div class="a">Bobr Translate supports 36 languages. Apple Russian/English/Chinese/Spanish/French/German/Japanese/Korean/Arabic/Portuguese/Turkish/Thai/Vietnamese and 23 more. We do not currently translate code-points outside this list. If a language is missing, drop us a note — we keep an eye on upstream model releases.</div>
+  </div>
+
+  <div class="card">
+    <div class="q">Can I use my own model?</div>
+    <div class="a">Mac App Store policy forbids loading arbitrary executable code at runtime. Bobr Translate therefore ships a curated list of pre-verified models (visible in <strong>Settings → Model size</strong>), each with a hardcoded URL and SHA-256 hash. We add new sizes as they become available.</div>
+  </div>
+
+  <div class="card">
+    <div class="q">Does Bobr Translate work offline?</div>
+    <div class="a">Yes, completely. The only network access ever is the one-time model download on first launch. After that, you can use the app in airplane mode indefinitely.</div>
+  </div>
+
+  <footer>© 2026 Bobr Translate · <a href="privacy.html">Privacy</a></footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Bobr Translate — Privacy Policy</title>
+  <link rel="icon" type="image/png" href="icon.png">
+  <style>
+    body{margin:0;background:#0c0c14;color:#f5f5f7;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,system-ui,sans-serif;line-height:1.65}
+    a{color:#9aa9ff}
+    main{max-width:760px;margin:0 auto;padding:64px 24px}
+    h1{font-size:42px;letter-spacing:-0.02em;margin:0 0 8px}
+    .sub{color:#a0a0b0;margin-bottom:40px}
+    h2{font-size:22px;margin:36px 0 12px;letter-spacing:-0.01em}
+    p,li{color:#d8d8e0;font-size:16px}
+    code{background:#1d1d2e;padding:2px 6px;border-radius:6px;font-size:13.5px}
+    .nav{margin-bottom:32px}.nav a{margin-right:16px;font-size:14px;color:#a0a0b0}
+    footer{margin-top:80px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.08);color:#a0a0b0;font-size:13px}
+  </style>
+</head>
+<body>
+<main>
+  <div class="nav"><a href="index.html">← Back to Bobr Translate</a></div>
+  <h1>Privacy Policy</h1>
+  <div class="sub">Last updated: 13 May 2026</div>
+
+  <p>Bobr Translate is designed so the only place your documents go is your Mac. This policy explains, in plain English, exactly what the app does and does not do.</p>
+
+  <h2>Short version</h2>
+  <ul>
+    <li>We do <strong>not</strong> collect, transmit, or store any of your data.</li>
+    <li>There is no account, no sign-in, no telemetry, no analytics, no advertising SDK.</li>
+    <li>Documents you translate never leave your Mac. Translation runs locally on Apple Silicon (Metal) or Intel CPU.</li>
+    <li>The only network request Bobr Translate ever makes is a one-time download of the translation model weights from <code>huggingface.co</code> on first launch.</li>
+  </ul>
+
+  <h2>What happens on first launch</h2>
+  <p>To translate text on-device, Bobr Translate needs an offline translation model. The first time you open the app it downloads a single file:</p>
+  <ul>
+    <li>a single model file (~1.1 GB), downloaded from <code>huggingface.co</code>.</li>
+    <li>The file is stored in your app's sandbox container at <code>~/Library/Containers/com.doclingua.app/Data/Library/Application Support/com.doclingua.app/models/</code>.</li>
+    <li>A SHA-256 hash is verified after download so the file cannot be silently substituted.</li>
+  </ul>
+  <p>After this one request, Bobr Translate never touches the network again. You can verify this by turning Wi-Fi off — translation continues to work.</p>
+
+  <h2>What documents you translate</h2>
+  <p>When you drop a <code>.docx</code>, <code>.xlsx</code> or <code>.pptx</code> file into Bobr Translate:</p>
+  <ul>
+    <li>The file is read from the location you selected (the macOS sandbox grants access only to files you explicitly choose).</li>
+    <li>Text is extracted run-by-run and translated locally by the on-device model.</li>
+    <li>A translated copy is written back to disk next to the original (or to a folder you choose) with a language suffix, e.g. <code>Report.ru.docx</code>.</li>
+    <li>No copy of your document is sent over the network, stored remotely, or logged. Nothing is retained by Bobr Translate outside the file you can see in Finder.</li>
+  </ul>
+
+  <h2>Sandbox &amp; entitlements</h2>
+  <p>Bobr Translate runs under the macOS App Sandbox. The full list of permissions it requests:</p>
+  <ul>
+    <li><code>com.apple.security.app-sandbox</code> — sandboxing on.</li>
+    <li><code>com.apple.security.network.client</code> — to download the model weights (one-time).</li>
+    <li><code>com.apple.security.files.user-selected.read-write</code> — to read the file you drop in and write the translated copy.</li>
+    <li><code>com.apple.security.files.bookmarks.app-scope</code> — to remember recently-translated files between launches.</li>
+  </ul>
+  <p>That is the complete list. Bobr Translate cannot reach any other part of your file system, your contacts, calendar, or device sensors.</p>
+
+  <h2>Children</h2>
+  <p>Bobr Translate does not knowingly collect data from anyone, including children under 13.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If the policy ever changes materially, the new version will be posted here and the "Last updated" date will be revised.</p>
+
+  <h2>Contact</h2>
+  <p>Questions? Email <a href="mailto:bobrtranslate@gmail.com">bobrtranslate@gmail.com</a>.</p>
+
+  <footer>© 2026 Bobr Translate</footer>
+</main>
+</body>
+</html>
